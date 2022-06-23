@@ -1,0 +1,27 @@
+{
+    "name": "phynix/cms",
+    "description": "Phynix Media CMS Application Package",
+    "authors": [
+        {
+            "name": "Phynix Media Ltd",
+            "email": "david.adebayo@phynixmedia.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Cms\\App\\":"src"
+        },
+        "files": [
+            "packages/cms/src/Helpers/Helper.php"
+        ]
+    },
+    "extra": {
+        "laravel":{
+            "providers":[
+                "CmsServiceProvider"
+            ]
+        }
+    }
+}

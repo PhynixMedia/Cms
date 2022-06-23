@@ -2,10 +2,10 @@
 
 namespace Cms\App\Controllers\Pages;
 
-use App\Http\Controllers\Auths\CoreController;
-use Cms\App\Models\Blogs\Relations\BlogRelations;
+use Cms\App\Controllers\BaseController;
+use Cms\App\Models\Pages\Relations\BlogRelations;
 
-class BlogsController extends CoreController {
+class BlogsController extends BaseController {
 
     public function __construct(){
 

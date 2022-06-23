@@ -2,11 +2,10 @@
 
 namespace Cms\App\Controllers\Pages;
 
-use App\Http\Controllers\Auths\CoreController;
-use App\Http\Requests\Users\AdminCreateUserRequest;
+use Cms\App\Controllers\BaseController;
 use Illuminate\Http\Request;
 
-class LayoutsController extends CoreController {
+class LayoutsController extends BaseController {
 
     public function __construct(){
 
@@ -18,7 +17,7 @@ class LayoutsController extends CoreController {
         $payload = $this->webService->layouts()->prepare($request, true);
         $payload["status"] = 1;
 
-        if(! $this->jobService->layouts()->set(map_request($payload))){
+        if(! $this->webService->layouts()->set(map_request($payload))){
 
             return response()->json($this->statusService::error("Create Job Activity"));
         }
@@ -32,7 +31,7 @@ class LayoutsController extends CoreController {
             $target = $request->get("target") ?? [];
             $data = $request->get("data") ?? [];
 
-            if (!$records = $this->jobService->layouts()->update($data, $target)) {
+            if (!$records = $this->webService->layouts()->update($data, $target)) {
                 return response()->json($this->statusService::error("Update Job"));
             }
 
@@ -48,7 +47,7 @@ class LayoutsController extends CoreController {
 
             $where = ["id" => $identifier];
 
-            if (!$this->jobService->layouts()->delete($where)) {
+            if (!$this->webService->layouts()->delete($where)) {
 
                 return response()->json($this->statusService::error("Delete"));
             }

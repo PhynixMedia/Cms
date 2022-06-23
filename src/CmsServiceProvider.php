@@ -31,6 +31,7 @@ class CmsServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
+
         //register the view
         $this->mergeConfigFrom(__DIR__ . '/config/cms-app.php', 'cms-app');
         $this->publishes([

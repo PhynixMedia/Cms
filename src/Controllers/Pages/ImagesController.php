@@ -2,12 +2,11 @@
 
 namespace Cms\App\Controllers\Pages;
 
-use App\Http\Controllers\Auths\CoreController;
-use App\Http\Requests\Users\AdminCreateUserRequest;
+use Cms\App\Controllers\BaseController;
 use Cms\App\Services\Pages\MediaService;
 use Illuminate\Http\Request;
 
-class ImagesController extends CoreController {
+class ImagesController extends BaseController {
 
     public function __construct(){
 
@@ -19,7 +18,7 @@ class ImagesController extends CoreController {
         $payload = $this->webService->layouts()->prepare($request, true);
         $payload["status"] = 1;
 
-        if(! $this->jobService->layouts()->set(map_request($payload))){
+        if(! $this->webService->layouts()->set(map_request($payload))){
 
             return response()->json($this->statusService::error("Create Job Activity"));
         }

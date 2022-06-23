@@ -4,7 +4,7 @@ Route::group(['prefix' => 'api'], function ($router) {
     /**
      * CMS Web Content and BLog Route
      */
-    Route::group(['prefix' => 'web'], function () {
+    Route::group(['prefix' => 'cms'], function () {
 
         Route::group(['prefix' => 'pages'], function () {
 

@@ -2,12 +2,12 @@
 
 namespace Cms\App\Controllers\Pages;
 
-use App\Http\Controllers\Auths\CoreController;
+use Cms\App\Controllers\BaseController;
 use Cms\App\Requests\SearchWebsiteRequest;
 use Cms\App\Models\Pages\Relations\PageRelations;
 use Illuminate\Http\Request;
 
-class TemplateController extends CoreController {
+class TemplateController extends BaseController {
 
     const WEB_TEMPLATE  = "template";
     const WEB_BLOCKS    = "block";
@@ -19,7 +19,6 @@ class TemplateController extends CoreController {
 
         parent::__construct();
     }
-
 
     public function fetch($target){
 

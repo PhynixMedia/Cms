@@ -13,10 +13,7 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // register our controller
-//        $this->app->make('Account\App\Controllers\Auths\LoginController');
-        //register the view
-        $this->loadViewsFrom(__DIR__.'/views', 'cms');
+//        $this->loadViewsFrom(__DIR__.'/views', 'cms');
     }
 
     /**
@@ -31,7 +28,6 @@ class CmsServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
-
         /**
          * Register config and views
          */
@@ -41,5 +37,4 @@ class CmsServiceProvider extends ServiceProvider
         ]);
 
     }
-
 }

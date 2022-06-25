@@ -1,7 +1,6 @@
 {
     "name": "phynix/cms",
     "description": "Phynix Media CMS Application Package",
-    "version": "0.1",
     "authors": [
         {
             "name": "Phynix Media Ltd",

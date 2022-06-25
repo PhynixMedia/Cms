@@ -12,10 +12,7 @@
     "autoload": {
         "psr-4": {
             "Cms\\App\\":"src"
-        },
-        "files": [
-            "packages/cms/src/Helpers/Helper.php"
-        ]
+        }
     },
     "extra": {
         "laravel":{

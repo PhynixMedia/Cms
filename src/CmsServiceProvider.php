@@ -32,11 +32,14 @@ class CmsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
 
-        //register the view
+        /**
+         * Register config and views
+         */
         $this->mergeConfigFrom(__DIR__ . '/config/cms-app.php', 'cms-app');
         $this->publishes([
             __DIR__ . '/config/cms-app.php' => config_path('cms-app.php'),
         ]);
+
     }
 
 }

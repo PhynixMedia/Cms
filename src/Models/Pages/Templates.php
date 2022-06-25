@@ -34,6 +34,6 @@ class Templates extends Model
     }
 
     public function layouts(){
-        return $this->hasMany('Cms\App\Models\Pages\Layouts', 'id', 'layout');
+        return $this->hasOne('Cms\App\Models\Pages\Layouts', 'id', 'layout');
     }
 }

@@ -31,22 +31,22 @@ class TemplateController extends BaseController {
 
             break;
             case self::WEB_BLOCKS:
-                if($records =  $this->webService->template()->blocks()->find([])){
+                if($records =  $this->webService->template()->blocks()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
             break;
             case self::WEB_GROUPS:
-                if($records =  $this->webService->template()->groups()->find([])){
+                if($records =  $this->webService->template()->groups()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
             break;
             case self::WEB_ELEMENTS:
-                if($records =  $this->webService->template()->elements()->find([])){
+                if($records =  $this->webService->template()->elements()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
             break;
             case self::WEB_LAYOUT:
-                if($records =  $this->webService->template()->layouts()->find([])){
+                if($records =  $this->webService->template()->layouts()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
             break;

@@ -25,7 +25,7 @@ class TemplateController extends BaseController {
         switch ($target){
             case self::WEB_TEMPLATE:
                 \Log::info("Changes to app" . $target);
-                if($records = $this->webService->template()->find([])){
+                if($records = $this->webService->template()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
 

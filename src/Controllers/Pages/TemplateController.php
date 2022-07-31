@@ -57,7 +57,7 @@ class TemplateController extends BaseController {
 
     public function find(SearchWebsiteRequest $request, $target){
 
-        $where = $request->get('target');
+        $where = $request->get('target') ?? [];
         $fetch = $request->get("total");
 
         switch ($target){

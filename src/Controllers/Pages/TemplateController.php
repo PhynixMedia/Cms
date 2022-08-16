@@ -177,7 +177,7 @@ class TemplateController extends BaseController {
                         return response()->json($this->statusService::error("Create"));
                     }
                 }
-                if ($records = $this->webService->template()->blocks()->fetch(["id"=>$request->get("block_id")], PageRelations::ELEMENTS)) {
+                if ($records = $this->webService->template()->blocks()->fetch(["id"=>$request->get("block_id")], PageRelations::GROUPS_ELEMENTS)) {
                     return response()->json($this->statusService::success("Create", $records->toArray()));
                 }
             break;

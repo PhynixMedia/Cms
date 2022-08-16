@@ -4,6 +4,7 @@ namespace Cms\App\Controllers\Pages;
 
 use Cms\App\Controllers\BaseController;
 use Cms\App\Models\Pages\Relations\BlogRelations;
+use Illuminate\Http\Request;
 
 class BlogsController extends BaseController {
 

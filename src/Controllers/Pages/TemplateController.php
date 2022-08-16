@@ -24,13 +24,12 @@ class TemplateController extends BaseController {
 
         switch ($target){
             case self::WEB_TEMPLATE:
-                \Log::info("Changes to app" . $target);
                 if($records = $this->webService->template()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
-
             break;
             case self::WEB_BLOCKS:
+                \Log::info("changes to app -- " . $target);
                 if($records =  $this->webService->template()->blocks()->fetch([])){
                     return response()->json($this->statusService::success("Fetch", $records->toArray()));
                 }
@@ -64,6 +63,7 @@ class TemplateController extends BaseController {
             case self::WEB_TEMPLATE:
 
                 if($fetch == 1){
+
                     if ($records = $this->webService->template()->fetchOne($where, PageRelations::BLOCKS_GROUPS_ELEMENTS)) {
                         return response()->json($this->statusService::success("Fetch", $records->toArray()));
                     }
@@ -72,7 +72,6 @@ class TemplateController extends BaseController {
                         return response()->json($this->statusService::success("Fetch", $records->toArray()));
                     }
                 }
-
                 break;
             case self::WEB_BLOCKS:
                 if($fetch == 1) {
@@ -81,7 +80,7 @@ class TemplateController extends BaseController {
                     }
                 } else {
 
-                    \Log::info("Unable to fetch ".json_encode($where));
+                    \Log::info("Unable to fetch ------ ".json_encode($where));
                     if ($records = $this->webService->template()->blocks()->fetch($where, PageRelations::GROUPS_ELEMENTS)) {
                         return response()->json($this->statusService::success("Fetch", $records->toArray()));
                     }
@@ -178,8 +177,7 @@ class TemplateController extends BaseController {
                         return response()->json($this->statusService::error("Create"));
                     }
                 }
-
-                if ($records = $this->webService->template()->elements()->fetch(["group_id"=>$request->get("group_id")], PageRelations::ELEMENTS)) {
+                if ($records = $this->webService->template()->groups()->fetch(["group_id"=>$request->get("group_id")], PageRelations::ELEMENTS)) {
                     return response()->json($this->statusService::success("Create", $records->toArray()));
                 }
             break;

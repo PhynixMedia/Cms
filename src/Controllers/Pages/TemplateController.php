@@ -301,11 +301,14 @@ class TemplateController extends BaseController
     {
         try {
 
-            $where = $request->all();
+            $where = ["name" => $request->get("name")];
+            $ids = $request->get("ids");
 
             switch ($target) {
 
                 case self::WEB_ELEMENTS:
+
+                    $this->webService->template()->elements()->deleteWithWhereIn($where,"group_id", $ids);
 
                     if (!$this->webService->template()->elements()->delete($where)) {
                         return response()->json($this->statusService::error("Delete"));

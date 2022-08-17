@@ -2,12 +2,12 @@
 
 namespace Cms\App\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 
-class SearchWebsiteRequest  extends FormRequest
+class DeleteMultipleRecords extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,8 +29,8 @@ class SearchWebsiteRequest  extends FormRequest
     public function rules()
     {
         return [
-            "target"   => 'required',
-            "total"    => 'required',
+            "id"        => 'required',
+            "name"      => 'required',
         ];
     }
 }

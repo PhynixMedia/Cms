@@ -17,6 +17,7 @@ Route::group(['prefix' => 'api'], function ($router) {
             Route::get('/fetch/{target}', 'Cms\App\Controllers\Pages\TemplateController@fetch');
             Route::post('/search/{target}', 'Cms\App\Controllers\Pages\TemplateController@find');
             Route::get('/delete/{target}/{identifier}', 'Cms\App\Controllers\Pages\TemplateController@delete');
+            Route::post('/delete/{target}', 'Cms\App\Controllers\Pages\TemplateController@postDelete');
         });
 
         Route::group(['prefix' => 'blogs'], function () {

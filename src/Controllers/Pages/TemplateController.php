@@ -308,9 +308,7 @@ class TemplateController extends BaseController
 
                 case self::WEB_ELEMENTS:
 
-                    $this->webService->template()->elements()->deleteWithWhereIn($where,"group_id", $ids);
-
-                    if (!$this->webService->template()->elements()->delete($where)) {
+                    if (!$this->webService->template()->elements()->deleteWithWhereIn($where,"group_id", $ids)) {
                         return response()->json($this->statusService::error("Delete"));
                     }
 
